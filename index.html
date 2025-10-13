@@ -3,164 +3,208 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Official Channel | Khushi's Connect</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>Exclusive Connect | Khushi's Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      /* Defined a primary color for Telegram look */
       --telegram-blue: #0088cc;
-      --light-bg: #e6e9f0;
+      --highlight-red: #e74c3c;
+      --info-green: #2ecc71; 
       --dark-text: #2c3e50;
+      --card-shadow: rgba(44, 62, 80, 0.15);
+      --note-yellow: #f1c40f; 
     }
     body {
       margin: 0;
       font-family: "Poppins", sans-serif;
-      /* Changed background to a modern, subtle gradient */
-      background: linear-gradient(135deg, var(--light-bg), #d4dae8);
-      color: var(--dark-text);
+      background: linear-gradient(135deg, #4facfe, #00f2fe); 
+      color: white; 
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      min-height: 100vh; /* Use min-height for better mobile viewing */
+      justify-content: center; /* Changed to center to fit content better */
+      min-height: 100vh; /* Ensures full screen height */
+      height: 100vh; /* Explicitly set height */
+      overflow: hidden; /* **Key: Prevents scrolling** */
       text-align: center;
-      padding: 20px;
+      padding: 20px 20px 100px 20px; /* Padding for fixed button */
       box-sizing: border-box;
     }
     .card {
-      background: white;
-      padding: 40px 30px;
-      border-radius: 25px; /* Slightly more rounded corners */
-      /* More defined shadow */
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-      max-width: 400px; /* Increased max-width */
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(5px);
+      padding: 15px 20px; /* Reduced padding */
+      border-radius: 20px;
+      box-shadow: 0 15px 40px var(--card-shadow); 
+      max-width: 420px;
       width: 95%;
-      transform: translateY(-10px); /* Small lift effect */
-      transition: transform 0.3s ease;
+      height: 100%; /* Allows card to take available space */
+      display: flex; /* Flex container */
+      flex-direction: column; /* Vertical alignment */
+      justify-content: space-between; /* Spreads content */
+      color: var(--dark-text);
+      overflow-y: auto; /* **Allows scrolling inside the card if needed** */
+      padding-bottom: 20px; /* Adjusted internal padding */
+    }
+
+    /* --- General Text and Image Styles --- */
+    .header-content {
+        flex-shrink: 0; /* Ensures header does not shrink */
     }
     .profile-img {
-      width: 140px; /* Increased size */
-      height: 140px;
+      width: 100px; /* Reduced size */
+      height: 100px; /* Reduced size */
       border-radius: 50%;
       object-fit: cover;
-      /* Telegram Blue border */
-      border: 4px solid var(--telegram-blue);
-      margin-bottom: 25px;
+      border: 4px solid var(--telegram-blue); /* Reduced border */
+      margin-bottom: 15px; /* Reduced margin */
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
     h1 {
-      margin: 5px 0 10px 0;
-      font-size: 28px;
-      font-weight: 700;
-      color: var(--telegram-blue);
+      margin: 0 0 3px 0;
+      font-size: 26px; /* Reduced font size */
+      font-weight: 800;
+      color: var(--dark-text);
     }
     h2 {
-      font-size: 16px;
-      font-weight: 400;
-      color: #7f8c8d;
-      margin-bottom: 30px;
+      font-size: 14px; /* Reduced font size */
+      font-weight: 600;
+      color: var(--telegram-blue);
+      margin-bottom: 15px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
     p {
-      font-size: 16px;
-      line-height: 1.6;
-      margin-bottom: 30px;
-      color: #555;
+      font-size: 14px; /* Reduced font size */
+      line-height: 1.5;
+      margin-bottom: 15px;
+      color: #7f8c8d;
     }
-    /* Timer Style */
-    #countdown-timer {
-      font-size: 32px;
-      font-weight: 700;
-      color: #e74c3c; /* Red color for urgency */
-      margin-bottom: 20px;
-      border: 2px solid #e74c3c;
-      padding: 10px;
-      border-radius: 10px;
-      display: inline-block;
+
+    /* --- ANIMATED INFO BOXES --- */
+    @keyframes fadeInSlide {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
     }
-    /* Button Style - Primary Telegram Blue */
+    .service-items-container {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .service-item {
+        background-color: #fcfcfc;
+        border: 1px solid #ddd;
+        border-left: 4px solid var(--info-green);
+        border-radius: 8px;
+        padding: 10px 15px; /* Reduced padding */
+        margin-bottom: 8px; /* Reduced margin */
+        text-align: left;
+        font-weight: 600;
+        font-size: 14px; /* Reduced font size */
+        color: var(--dark-text);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03); 
+        opacity: 0;
+        animation: fadeInSlide 0.5s forwards; 
+    }
+    .service-item:nth-child(1) { animation-delay: 0.2s; border-left-color: var(--info-green); }
+    .service-item:nth-child(2) { animation-delay: 0.4s; border-left-color: var(--telegram-blue); }
+    .service-item:nth-child(3) { animation-delay: 0.6s; border-left-color: var(--highlight-red); }
+    .service-item:nth-child(4) { animation-delay: 0.8s; border-left-color: #f39c12; }
+
+    /* --- NEW CALL NOTE BOX --- */
+    .highlight-note-box {
+        background-color: var(--note-yellow);
+        border: 2px solid #e6b300;
+        border-radius: 10px;
+        padding: 10px; /* Reduced padding */
+        margin-top: 15px; /* Reduced margin */
+        margin-bottom: 0; /* No margin at the bottom */
+        color: #333; 
+        font-weight: 700;
+        font-size: 14px; /* Reduced font size */
+        line-height: 1.4;
+        box-shadow: 0 4px 10px rgba(241, 196, 15, 0.4);
+        flex-shrink: 0; /* Ensures the note does not shrink */
+    }
+    
+    /* --- RED BLINKING FIXED BUTTON --- */
+    @keyframes blink {
+        0% { opacity: 1; }
+        50% { opacity: 0.3; }
+        100% { opacity: 1; }
+    }
+    
     .telegram-btn {
-      background-color: var(--telegram-blue);
+      /* Fixed Position Settings - Key to fix button */
+      position: fixed; 
+      bottom: 20px; 
+      left: 50%; 
+      transform: translateX(-50%); 
+      z-index: 1000; 
+      
+      /* Style */
+      background-color: var(--highlight-red);
       color: white;
       text-decoration: none;
-      padding: 15px 40px;
+      padding: 15px 40px; /* Adjusted padding */
       border-radius: 35px;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 18px;
       display: inline-block;
       transition: 0.3s ease, transform 0.2s;
-      box-shadow: 0 8px 15px rgba(0, 136, 204, 0.3);
+      box-shadow: 0 0 0 5px rgba(231, 76, 60, 0.3);
+      border: 3px solid white; 
+      width: 80%; 
+      max-width: 350px; /* Slightly wider button */
+      
+      animation: blink 1.2s infinite; 
     }
     .telegram-btn:hover {
-      background-color: #0077b3;
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 12px 20px rgba(0, 136, 204, 0.4);
-    }
-    /* Added a style for a 'backchodi' image to make it fit well */
-    /* NOTE: You need to replace the URL below with your actual image link */
-    .backchodi-img {
-      max-width: 100%; 
-      border-radius: 15px; 
-      margin-bottom: 25px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      background-color: #c0392b;
+      transform: translateX(-50%) translateY(-3px) scale(1.05); 
+      box-shadow: 0 12px 25px rgba(231, 76, 60, 0.5);
+      animation: none; 
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <img src="pic.jpg" alt="Profile Picture" class="profile-img" />
-    
-    <h1>Khushi's Official Hub</h1>
-    <h2>Exclusive Content & Real-Time Updates</h2>
-    
-    <p>⚡️ **Limited Time Offer!** Join within the next 2 minutes to get direct access to my latest announcements and behind-the-scenes content.</p>
-    <div id="countdown-timer">02:00</div>
-    
-    <img src="pic1.jpg" alt="Fun Content Preview" class="backchodi-img" />
+    <div class="header-content">
+        <img src="pic.jpg" alt="Profile Picture" class="profile-img" />
+        
+        <h1>Khushi</h1>
+        <h2>Verified Official Services Hub</h2>
+        
+        <p style="font-style: italic; color: var(--dark-text); margin-bottom: 5px;">
+            "Connect for exclusive, verified, and genuine services only."
+        </p>
+    </div>
 
-    <p style="font-style: italic; font-size: 14px; margin-top: 10px; color: #34495e;">
-        "Where authenticity meets engagement. Don't miss out on the conversation."
-    </p>
-
-    <a href="https://t.me/Khushiiii9" target="_blank" class="telegram-btn">
-        Join me Now
-    </a>
+    <div class="service-items-container">
+        <div class="service-item">
+            Real Meet available in Delhi NCR
+        </div>
+        <div class="service-item">
+            Live Video Session facility available
+        </div>
+        <div class="service-item">
+            100% Real and Genuine service provide
+        </div>
+        <div class="service-item">
+            You can book me in any state in Delhi
+        </div>
+    </div>
+    
+    <div class="highlight-note-box">
+        **IMPORTANT:** Please call to discuss rates and confirm booking. Chat may be slow for detailed inquiries.
+    </div>
   </div>
+  
+  <a href="https://t.me/Khushiiii9" target="_blank" class="telegram-btn">
+      JOIN ME ON TELEGRAM
+  </a>
 
   <script>
-    // --- Countdown Timer Logic (JavaScript) ---
-    
-    // 2 minutes = 120 seconds
-    let timeRemaining = 120; 
-    const timerDisplay = document.getElementById('countdown-timer');
-    const joinButton = document.querySelector('.telegram-btn');
-
-    function updateTimer() {
-      const minutes = Math.floor(timeRemaining / 60);
-      let seconds = timeRemaining % 60;
-      
-      // Format to ensure two digits (e.g., 05 instead of 5)
-      seconds = seconds < 10 ? '0' + seconds : seconds;
-      
-      timerDisplay.textContent = `${minutes}:${seconds}`;
-
-      if (timeRemaining <= 0) {
-        clearInterval(timerInterval);
-        timerDisplay.textContent = "Time Expired!";
-        timerDisplay.style.color = '#c0392b'; // Darker red
-        // Optionally, you can disable the button after time runs out:
-        // joinButton.classList.remove('telegram-btn');
-        // joinButton.style.backgroundColor = '#95a5a6'; // Grey out button
-        // joinButton.href = '#'; // Remove the link
-      } else {
-        timeRemaining--;
-      }
-    }
-
-    // Start the timer every second (1000 milliseconds)
-    const timerInterval = setInterval(updateTimer, 1000);
-    
-    // Initial call to display 02:00 immediately
-    updateTimer(); 
+    // JavaScript (Timer logic removed)
   </script>
 </body>
 </html>
