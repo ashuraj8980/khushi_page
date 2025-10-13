@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Official Channel | Khushi's Connect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Defined a primary color for Telegram look */
+      --telegram-blue: #0088cc;
+      --light-bg: #e6e9f0;
+      --dark-text: #2c3e50;
+    }
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      /* Changed background to a modern, subtle gradient */
+      background: linear-gradient(135deg, var(--light-bg), #d4dae8);
+      color: var(--dark-text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh; /* Use min-height for better mobile viewing */
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .card {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 25px; /* Slightly more rounded corners */
+      /* More defined shadow */
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      max-width: 400px; /* Increased max-width */
+      width: 95%;
+      transform: translateY(-10px); /* Small lift effect */
+      transition: transform 0.3s ease;
+    }
+    .profile-img {
+      width: 140px; /* Increased size */
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      /* Telegram Blue border */
+      border: 4px solid var(--telegram-blue);
+      margin-bottom: 25px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      margin: 5px 0 10px 0;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--telegram-blue);
+    }
+    h2 {
+      font-size: 16px;
+      font-weight: 400;
+      color: #7f8c8d;
+      margin-bottom: 30px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: #555;
+    }
+    /* Timer Style */
+    #countdown-timer {
+      font-size: 32px;
+      font-weight: 700;
+      color: #e74c3c; /* Red color for urgency */
+      margin-bottom: 20px;
+      border: 2px solid #e74c3c;
+      padding: 10px;
+      border-radius: 10px;
+      display: inline-block;
+    }
+    /* Button Style - Primary Telegram Blue */
+    .telegram-btn {
+      background-color: var(--telegram-blue);
+      color: white;
+      text-decoration: none;
+      padding: 15px 40px;
+      border-radius: 35px;
+      font-weight: 600;
+      font-size: 18px;
+      display: inline-block;
+      transition: 0.3s ease, transform 0.2s;
+      box-shadow: 0 8px 15px rgba(0, 136, 204, 0.3);
+    }
+    .telegram-btn:hover {
+      background-color: #0077b3;
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 12px 20px rgba(0, 136, 204, 0.4);
+    }
+    /* Added a style for a 'backchodi' image to make it fit well */
+    /* NOTE: You need to replace the URL below with your actual image link */
+    .backchodi-img {
+      max-width: 100%; 
+      border-radius: 15px; 
+      margin-bottom: 25px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="pic.jpg" alt="Profile Picture" class="profile-img" />
+    
+    <h1>Khushi's Official Hub</h1>
+    <h2>Exclusive Content & Real-Time Updates</h2>
+    
+    <p>⚡️ **Limited Time Offer!** Join within the next 2 minutes to get direct access to my latest announcements and behind-the-scenes content.</p>
+    <div id="countdown-timer">02:00</div>
+    
+    <img src="pic1.jpg" alt="Fun Content Preview" class="backchodi-img" />
+
+    <p style="font-style: italic; font-size: 14px; margin-top: 10px; color: #34495e;">
+        "Where authenticity meets engagement. Don't miss out on the conversation."
+    </p>
+
+    <a href="https://t.me/Khushiiii9" target="_blank" class="telegram-btn">
+        Join me Now
+    </a>
+  </div>
+
+  <script>
+    // --- Countdown Timer Logic (JavaScript) ---
+    
+    // 2 minutes = 120 seconds
+    let timeRemaining = 120; 
+    const timerDisplay = document.getElementById('countdown-timer');
+    const joinButton = document.querySelector('.telegram-btn');
+
+    function updateTimer() {
+      const minutes = Math.floor(timeRemaining / 60);
+      let seconds = timeRemaining % 60;
+      
+      // Format to ensure two digits (e.g., 05 instead of 5)
+      seconds = seconds < 10 ? '0' + seconds : seconds;
+      
+      timerDisplay.textContent = `${minutes}:${seconds}`;
+
+      if (timeRemaining <= 0) {
+        clearInterval(timerInterval);
+        timerDisplay.textContent = "Time Expired!";
+        timerDisplay.style.color = '#c0392b'; // Darker red
+        // Optionally, you can disable the button after time runs out:
+        // joinButton.classList.remove('telegram-btn');
+        // joinButton.style.backgroundColor = '#95a5a6'; // Grey out button
+        // joinButton.href = '#'; // Remove the link
+      } else {
+        timeRemaining--;
+      }
+    }
+
+    // Start the timer every second (1000 milliseconds)
+    const timerInterval = setInterval(updateTimer, 1000);
+    
+    // Initial call to display 02:00 immediately
+    updateTimer(); 
+  </script>
+</body>
+</html>
