@@ -1,211 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Exclusive Connect | Khushi's Services</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --telegram-blue: #0088cc;
-      --highlight-red: #e74c3c;
-      --info-green: #2ecc71; 
-      --dark-text: #2c3e50;
-      --card-shadow: rgba(44, 62, 80, 0.15);
-      --note-yellow: #f1c40f; 
-    }
-    body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #4facfe, #00f2fe); 
-      color: white; 
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center; /* Changed to center to fit content better */
-      min-height: 100vh; /* Ensures full screen height */
-      height: 100vh; /* Explicitly set height */
-      overflow: hidden; /* **Key: Prevents scrolling** */
-      text-align: center;
-      padding: 20px 20px 100px 20px; /* Padding for fixed button */
-      box-sizing: border-box;
-    }
-    .card {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(5px);
-      padding: 15px 20px; /* Reduced padding */
-      border-radius: 20px;
-      box-shadow: 0 15px 40px var(--card-shadow); 
-      max-width: 420px;
-      width: 95%;
-      height: 100%; /* Allows card to take available space */
-      display: flex; /* Flex container */
-      flex-direction: column; /* Vertical alignment */
-      justify-content: space-between; /* Spreads content */
-      color: var(--dark-text);
-      overflow-y: auto; /* **Allows scrolling inside the card if needed** */
-      padding-bottom: 20px; /* Adjusted internal padding */
-    }
-
-    /* --- General Text and Image Styles --- */
-    .header-content {
-        flex-shrink: 0; /* Ensures header does not shrink */
-    }
-    .profile-img {
-      width: 100px; /* Reduced size */
-      height: 100px; /* Reduced size */
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid var(--telegram-blue); /* Reduced border */
-      margin-bottom: 15px; /* Reduced margin */
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    h1 {
-      margin: 0 0 3px 0;
-      font-size: 26px; /* Reduced font size */
-      font-weight: 800;
-      color: var(--dark-text);
-    }
-    h2 {
-      font-size: 14px; /* Reduced font size */
-      font-weight: 600;
-      color: var(--telegram-blue);
-      margin-bottom: 15px;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-    p {
-      font-size: 14px; /* Reduced font size */
-      line-height: 1.5;
-      margin-bottom: 15px;
-      color: #7f8c8d;
-    }
-
-    /* --- ANIMATED INFO BOXES --- */
-    @keyframes fadeInSlide {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    .service-items-container {
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    .service-item {
-        background-color: #fcfcfc;
-        border: 1px solid #ddd;
-        border-left: 4px solid var(--info-green);
-        border-radius: 8px;
-        padding: 10px 15px; /* Reduced padding */
-        margin-bottom: 8px; /* Reduced margin */
-        text-align: left;
-        font-weight: 600;
-        font-size: 14px; /* Reduced font size */
-        color: var(--dark-text);
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03); 
-        opacity: 0;
-        animation: fadeInSlide 0.5s forwards; 
-    }
-    .service-item:nth-child(1) { animation-delay: 0.2s; border-left-color: var(--info-green); }
-    .service-item:nth-child(2) { animation-delay: 0.4s; border-left-color: var(--telegram-blue); }
-    .service-item:nth-child(3) { animation-delay: 0.6s; border-left-color: var(--highlight-red); }
-    .service-item:nth-child(4) { animation-delay: 0.8s; border-left-color: #f39c12; }
-
-    /* --- NEW CALL NOTE BOX --- */
-    .highlight-note-box {
-        background-color: var(--note-yellow);
-        border: 2px solid #e6b300;
-        border-radius: 10px;
-        padding: 10px; /* Reduced padding */
-        margin-top: 15px; /* Reduced margin */
-        margin-bottom: 0; /* No margin at the bottom */
-        color: #333; 
-        font-weight: 700;
-        font-size: 14px; /* Reduced font size */
-        line-height: 1.4;
-        box-shadow: 0 4px 10px rgba(241, 196, 15, 0.4);
-        flex-shrink: 0; /* Ensures the note does not shrink */
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khushi Elite Club | Real Meet Services</title>
     
-    /* --- RED BLINKING FIXED BUTTON --- */
-    @keyframes blink {
-        0% { opacity: 1; }
-        50% { opacity: 0.3; }
-        100% { opacity: 1; }
-    }
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1309836437733472'); 
+      fbq('track', 'PageView'); 
+    </script>
     
-    .telegram-btn {
-      /* Fixed Position Settings - Key to fix button */
-      position: fixed; 
-      bottom: 20px; 
-      left: 50%; 
-      transform: translateX(-50%); 
-      z-index: 1000; 
-      
-      /* Style */
-      background-color: var(--highlight-red);
-      color: white;
-      text-decoration: none;
-      padding: 15px 40px; /* Adjusted padding */
-      border-radius: 35px;
-      font-weight: 700;
-      font-size: 18px;
-      display: inline-block;
-      transition: 0.3s ease, transform 0.2s;
-      box-shadow: 0 0 0 5px rgba(231, 76, 60, 0.3);
-      border: 3px solid white; 
-      width: 80%; 
-      max-width: 350px; /* Slightly wider button */
-      
-      animation: blink 1.2s infinite; 
-    }
-    .telegram-btn:hover {
-      background-color: #c0392b;
-      transform: translateX(-50%) translateY(-3px) scale(1.05); 
-      box-shadow: 0 12px 25px rgba(231, 76, 60, 0.5);
-      animation: none; 
-    }
-  </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-blue: #007BFF;
+            --soft-blue: #EBF5FF;
+            --text-dark: #1A1A1A;
+            --accent-green: #2ECC71;
+        }
+
+        body {
+            margin: 0; padding: 0;
+            background-color: var(--soft-blue);
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            display: flex; justify-content: center; align-items: center;
+            min-height: 100vh;
+            background-image: linear-gradient(180deg, #FFFFFF 0%, #D6E9FF 100%);
+        }
+
+        .main-card {
+            width: 88%; max-width: 380px;
+            background: #FFFFFF;
+            border-radius: 35px;
+            padding: 40px 25px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,123,255,0.15);
+            border: 1px solid rgba(0,123,255,0.1);
+        }
+
+        .badge {
+            font-size: 11px; font-weight: 700; letter-spacing: 2px;
+            color: var(--primary-blue); text-transform: uppercase;
+            margin-bottom: 25px; display: block;
+        }
+
+        .profile-container {
+            width: 130px; height: 130px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+
+        .profile-pic {
+            width: 100%; height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary-blue);
+            padding: 3px; background: #fff;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .name {
+            font-size: 32px; font-weight: 800;
+            color: var(--primary-blue); margin-bottom: 5px;
+        }
+
+        .sub-text {
+            font-size: 14px; color: #666;
+            margin-bottom: 35px; font-weight: 500;
+        }
+
+        .feature-list {
+            text-align: left; margin-bottom: 40px;
+            padding: 0 10px;
+        }
+
+        .feature-item {
+            font-size: 13px; margin-bottom: 15px;
+            color: #444; display: flex; align-items: center;
+        }
+
+        .feature-item b { color: var(--primary-blue); margin-right: 12px; font-size: 18px; }
+
+        /* The Blinking Green Button */
+        .btn-join {
+            display: block;
+            background: linear-gradient(135deg, #27AE60 0%, var(--accent-green) 100%);
+            color: #fff; text-decoration: none;
+            padding: 22px; border-radius: 18px;
+            font-weight: 800; font-size: 17px;
+            text-transform: uppercase; letter-spacing: 1px;
+            box-shadow: 0 10px 20px rgba(46,204,113,0.3);
+            animation: blink-green 1.5s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes blink-green {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); }
+            50% { transform: scale(1.03); box-shadow: 0 0 0 15px rgba(46, 204, 113, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+        }
+
+        .footer {
+            margin-top: 25px; font-size: 11px; color: #999;
+            font-weight: 500;
+        }
+    </style>
 </head>
 <body>
-  <div class="card">
-    <div class="header-content">
-        <img src="pic.jpg" alt="Profile Picture" class="profile-img" />
+
+    <div class="main-card">
+        <span class="badge">● Real Meet Service Live</span>
         
-        <h1>Khushi</h1>
-        <h2>Verified Official Services Hub</h2>
+        <div class="profile-container">
+            <img src="pic1.jpg" alt="Elite Profile" class="profile-pic">
+        </div>
+
+        <div class="name">Khushi Elite</div>
+        <div class="sub-text">Premium Professional Agency</div>
         
-        <p style="font-style: italic; color: var(--dark-text); margin-bottom: 5px;">
-            "Connect for exclusive, verified, and genuine services only."
-        </p>
+        <div class="feature-list">
+            <div class="feature-item"><b>✦</b> Home & Hotel Meet Service</div>
+            <div class="feature-item"><b>✦</b> All Professional & Trained Staff</div>
+            <div class="feature-item"><b>✦</b> 100% Verified Profiles Only</div>
+            <div class="feature-item"><b>✦</b> Multiple Age Groups Available</div>
+            <div class="feature-item"><b>✦</b> Full Satisfaction Guaranteed</div>
+        </div>
+
+        <a href="https://t.me/+T5BGr73JbMpjMTM1" id="joinBtn" class="btn-join">Join For Real Meet</a>
+
+        <div class="footer">
+            Secure & Private meeting in all cities 
+        </div>
     </div>
 
-    <div class="service-items-container">
-        <div class="service-item">
-            Real Meet available in Delhi NCR
-        </div>
-        <div class="service-item">
-            Live Video Session facility available
-        </div>
-        <div class="service-item">
-            100% Real and Genuine service provide
-        </div>
-        <div class="service-item">
-            You can book me in any state of india
-        </div>
-    </div>
-    
-    <div class="highlight-note-box">
-        **IMPORTANT:** Please call to discuss rates and confirm booking. Chat may be slow for detailed inquiries.
-    </div>
-  </div>
-  
-  <a href="https://t.me/Khushiiii9" target="_blank" class="telegram-btn">
-      JOIN ME ON TELEGRAM
-  </a>
-
-  <script>
-    // JavaScript (Timer logic removed)
-  </script>
+    <script>
+        // Lead track sirf button dabane par hi hoga
+        document.getElementById('joinBtn').addEventListener('click', function() {
+            fbq('track', 'Lead');
+            console.log("Lead Tracked Successfully");
+        });
+    </script>
 </body>
 </html>
-
